@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTTEverywhere", "PTTEverywhere\PTTEverywhere.csproj", "{13689A42-948C-48E8-BA7F-93A5F54B330F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsMicrophoneMuteLibrary", "WindowsMicrophoneMuteLibrary\WindowsMicrophoneMuteLibrary.csproj", "{4D4A1F74-357D-4ABC-A598-576DAC5A74B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAudioApi", "CoreAudioAPI\CoreAudioApi.csproj", "{9F1076AA-63DF-4128-9C10-FD65E425C783}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixerNativeLibrary", "MixerNativeLibrary\MixerNativeLibrary.csproj", "{A88FFC8F-3FFF-4D22-A003-4627B22387B1}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "PTTESetup", "PTTEverywhereSetup\PTTESetup.wixproj", "{C038B361-E385-40F9-BDAC-A0F62BE1C6EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13689A42-948C-48E8-BA7F-93A5F54B330F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13689A42-948C-48E8-BA7F-93A5F54B330F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13689A42-948C-48E8-BA7F-93A5F54B330F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{13689A42-948C-48E8-BA7F-93A5F54B330F}.Debug|x86.Build.0 = Debug|Any CPU
+		{13689A42-948C-48E8-BA7F-93A5F54B330F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13689A42-948C-48E8-BA7F-93A5F54B330F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13689A42-948C-48E8-BA7F-93A5F54B330F}.Release|x86.ActiveCfg = Release|Any CPU
+		{13689A42-948C-48E8-BA7F-93A5F54B330F}.Release|x86.Build.0 = Release|Any CPU
+		{4D4A1F74-357D-4ABC-A598-576DAC5A74B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D4A1F74-357D-4ABC-A598-576DAC5A74B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D4A1F74-357D-4ABC-A598-576DAC5A74B3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4D4A1F74-357D-4ABC-A598-576DAC5A74B3}.Debug|x86.Build.0 = Debug|Any CPU
+		{4D4A1F74-357D-4ABC-A598-576DAC5A74B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D4A1F74-357D-4ABC-A598-576DAC5A74B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D4A1F74-357D-4ABC-A598-576DAC5A74B3}.Release|x86.ActiveCfg = Release|Any CPU
+		{4D4A1F74-357D-4ABC-A598-576DAC5A74B3}.Release|x86.Build.0 = Release|Any CPU
+		{9F1076AA-63DF-4128-9C10-FD65E425C783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F1076AA-63DF-4128-9C10-FD65E425C783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F1076AA-63DF-4128-9C10-FD65E425C783}.Debug|x86.ActiveCfg = Debug|x86
+		{9F1076AA-63DF-4128-9C10-FD65E425C783}.Debug|x86.Build.0 = Debug|x86
+		{9F1076AA-63DF-4128-9C10-FD65E425C783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F1076AA-63DF-4128-9C10-FD65E425C783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F1076AA-63DF-4128-9C10-FD65E425C783}.Release|x86.ActiveCfg = Release|x86
+		{9F1076AA-63DF-4128-9C10-FD65E425C783}.Release|x86.Build.0 = Release|x86
+		{A88FFC8F-3FFF-4D22-A003-4627B22387B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88FFC8F-3FFF-4D22-A003-4627B22387B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A88FFC8F-3FFF-4D22-A003-4627B22387B1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A88FFC8F-3FFF-4D22-A003-4627B22387B1}.Debug|x86.Build.0 = Debug|Any CPU
+		{A88FFC8F-3FFF-4D22-A003-4627B22387B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A88FFC8F-3FFF-4D22-A003-4627B22387B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A88FFC8F-3FFF-4D22-A003-4627B22387B1}.Release|x86.ActiveCfg = Release|Any CPU
+		{A88FFC8F-3FFF-4D22-A003-4627B22387B1}.Release|x86.Build.0 = Release|Any CPU
+		{C038B361-E385-40F9-BDAC-A0F62BE1C6EE}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C038B361-E385-40F9-BDAC-A0F62BE1C6EE}.Debug|x86.ActiveCfg = Debug|x86
+		{C038B361-E385-40F9-BDAC-A0F62BE1C6EE}.Debug|x86.Build.0 = Debug|x86
+		{C038B361-E385-40F9-BDAC-A0F62BE1C6EE}.Release|Any CPU.ActiveCfg = Release|x86
+		{C038B361-E385-40F9-BDAC-A0F62BE1C6EE}.Release|x86.ActiveCfg = Release|x86
+		{C038B361-E385-40F9-BDAC-A0F62BE1C6EE}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

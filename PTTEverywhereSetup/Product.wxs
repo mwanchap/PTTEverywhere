@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="*" Name="Push-To-Talk Everywhere" Language="1033" Version="1.1.0.0" Manufacturer="Matt Wanchap" UpgradeCode="49b6aee8-5f42-48d7-87c5-d762f03ff55a">
+        <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+        <MediaTemplate EmbedCab="yes" />
+
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFilesFolder">
+                <Directory Id="INSTALLFOLDER" Name="Push-To-Talk Everywhere" />
+            </Directory>
+            <Directory Id="ProgramMenuFolder">
+                <Directory Id="ApplicationProgramsFolder" Name="Push-To-Talk Everywhere"/>
+            </Directory>
+            <Directory Id="StartupFolder">
+                
+            </Directory>
+        </Directory>
+
+        <DirectoryRef Id="ApplicationProgramsFolder">
+            <Component Id="ApplicationShortcut" Guid="2fb1c9fd-bc74-42b6-a045-3ee0d949b968">
+                <Shortcut Id="ApplicationStartMenuShortcut"
+                          Name="Push-To-Talk Everywhere"
+                          Description="Allow push-to-talk functionality in every application"
+                          Target="[#PTTEverywhere.exe]"
+                          WorkingDirectory="APPLICATIONROOTDIRECTORY"
+                          Icon="mic.ico" />
+                <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+                <RegistryValue Root="HKCU" Key="Software\Push-To-Talk Everywhere" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+                <RegistryValue Root="HKCU" Key="Software\Push-To-Talk Everywhere" Name="hotkey" Type="string" Value="CapsLock" KeyPath="no" />
+            </Component>
+        </DirectoryRef>
+
+        <ComponentGroup Id="ApplicationStartupFolder">
+            <Component Id="ApplicationStartupShortcut" Directory="StartupFolder" Guid="0c59bce4-a7b3-4b7d-91fd-5b368d24488e">
+                <Shortcut   Id="ApplicationStartupShortcut"
+                            Name="Push-To-Talk Everywhere"
+                            Description="Allow push-to-talk functionality in every application"
+                            Target="[#PTTEverywhere.exe]"
+                            WorkingDirectory="APPLICATIONROOTDIRECTORY"
+                            Icon="mic.ico" />
+                <RemoveFile Id="ApplicationStartupShortcut" Name="Push-To-Talk Everywhere" On="uninstall"/>
+                <RegistryValue Root="HKCU" Key="Software\Push-To-Talk Everywhere" Name="startup" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+
+        <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+            <Component>
+                <File Source="$(var.PTTEverywhere.TargetDir)PTTEverywhere.exe" />
+            </Component>
+            <Component>
+                <File Source="$(var.PTTEverywhere.TargetDir)PTTEverywhere.exe.config" />
+            </Component>
+            <Component>
+                <File Source="$(var.PTTEverywhere.TargetDir)CoreAudioApi.dll" />
+            </Component>
+            <Component>
+                <File Source="$(var.PTTEverywhere.TargetDir)MixerNativeLibrary.dll" />
+            </Component>
+            <Component>
+                <File Source="$(var.PTTEverywhere.TargetDir)WindowsMicrophoneMuteLibrary.dll" />
+            </Component>
+        </ComponentGroup>
+        
+
+        <Feature Id="ProductFeature" Title="Push-To-Talk Everywhere" ConfigurableDirectory="INSTALLFOLDER">
+            <ComponentGroupRef Id="ProductComponents" />
+            <ComponentRef Id="ApplicationShortcut" />
+            <ComponentRef Id="ApplicationStartupShortcut" />
+        </Feature>
+        
+        <Icon Id="mic.ico" SourceFile="$(var.PTTEverywhere.TargetDir)mic.ico"/>
+        <Property Id="ARPPRODUCTICON" Value="mic.ico" />
+        <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Application" />
+        <Property Id="WixShellExecTarget" Value="[#PTTEverywhere.exe]" />
+        <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+        <UI>
+            <UIRef Id="WixUI_Mondo" />
+            <UIRef Id="WixUI_ErrorProgressText" />
+            <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">
+                WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed
+            </Publish>
+        </UI>
+    </Product>
+</Wix>
